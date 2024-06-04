@@ -2,14 +2,14 @@ class UsersController < ApplicationController
 
   before_action :is_matching_login_user, only: [:edit, :destroy]
 
-  def show
-    @user = User.find(params[:id])
-    @books = @user.books
+  def index
+    @users = User.all
     @book = Book.new
   end
 
-  def index
-    @users = User.all
+  def show
+    @user = User.find(params[:id])
+    @books = @user.books
     @book = Book.new
   end
 
